@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SADAF - Edit Download</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background Video */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Overlay (darkens the video slightly for better contrast) */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-top: 60px;
+      text-shadow: 0 0 10px #fff,
+                   0 0 20px #f0f,
+                   0 0 30px #f0f,
+                   0 0 40px #0ff,
+                   0 0 70px #0ff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff,
+                     0 0 20px #f0f,
+                     0 0 30px #f0f,
+                     0 0 40px #0ff,
+                     0 0 70px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #fff,
+                     0 0 30px #ff0,
+                     0 0 40px #ff0,
+                     0 0 60px #0ff,
+                     0 0 80px #0ff;
+      }
+    }
+
+    /* Glowing Animated Buttons */
+    .glow-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      text-decoration: none;
+      border: 2px solid white;
+      border-radius: 8px;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 10px white;
+      animation: pulse 2s infinite;
+    }
+
+    .glow-btn::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b, #0ff, #f0f);
+      z-index: -1;
+      animation: rotateBG 5s linear infinite;
+      filter: blur(20px);
+      opacity: 0.6;
+    }
+
+    @keyframes rotateBG {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #f0f;
+      }
+      50% {
+        box-shadow: 0 0 20px #0ff, 0 0 30px #f0f;
+      }
+      100% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #f0f;
+      }
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      width: 60%;
+      margin: 30px auto;
+    }
+
+    /* Center content */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding-top: 40px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://motionbgs.com/media/2978/minecraft-sunset.960x540.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Glowing Headings -->
+  <h1> Do You Want TO Play/Download The 83 Number Video ? </h1>
+  <h1>THEN CHOOSE BELOW (Download/Play) </h1>
+
+  <!-- Glowing Buttons -->
+  <a href="/edit.mp4" target="_blank" class="glow-btn">▶️ PLAY VIDEO</a>
+  <hr>
+   <a href="/edit.mp4" download class="glow-btn" download>📥 DOWNLOAD VIDEO</a>
+</body>
+</html>
